@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.github.edu.modular.edu.dao.StudyPlanMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.github.edu.modular.edu.model.StudyPlan">
+        <id column="study_plan_id" property="studyPlanId" />
+        <result column="study_plan_name" property="studyPlanName" />
+        <result column="study_plan_finish_time" property="studyPlanFinishTime" />
+        <result column="study_plan_desc" property="studyPlanDesc" />
+        <result column="study_plan_img" property="studyPlanImg" />
+        <result column="study_plan_credit" property="studyPlanCredit" />
+        <result column="study_plan_create_time" property="studyPlanCreateTime" />
+        <result column="study_plan_update_time" property="studyPlanUpdateTime" />
+        <result column="study_plan_create_by" property="studyPlanCreateBy" />
+        <result column="study_plan_update_by" property="studyPlanUpdateBy" />
+        <result column="study_plan_is_delete" property="studyPlanIsDelete" />
+        <result column="study_plan_achieve_hours" property="studyPlanAchieveHours" />
+        <result column="study_plan_adopt_hours" property="studyPlanAdoptHours" />
+        <result column="study_plan_relearn" property="studyPlanRelearn" />
+        <result column="study_plan_remind_cron" property="studyPlanRemindCron" />
+        <result column="study_plan_chapter" property="studyPlanChapter" />
+    </resultMap>
+
+</mapper>

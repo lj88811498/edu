@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.github.edu.modular.edu.dao.SysDeptMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.github.edu.modular.edu.model.SysDept">
+        <id column="dept_id" property="deptId" />
+        <result column="name" property="name" />
+        <result column="order_num" property="orderNum" />
+        <result column="create_time" property="createTime" />
+        <result column="dept_flag" property="deptFlag" />
+        <result column="update_time" property="updateTime" />
+        <result column="del_flag" property="delFlag" />
+        <result column="parent_id" property="parentId" />
+        <result column="longitude" property="longitude" />
+        <result column="latitude" property="latitude" />
+        <result column="city" property="city" />
+        <result column="city_no" property="cityNo" />
+        <result column="collection_region" property="collectionRegion" />
+    </resultMap>
+
+</mapper>

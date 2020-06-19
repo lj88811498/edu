@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.github.edu.modular.edu.dao.SubjectsAnswerMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="baseResultMap" type="com.github.edu.modular.edu.model.SubjectsAnswer">
+		<id column="subjects_answer_id" property="subjectsAnswerId" />
+		<result column="subjects_id" property="subjectsId" />
+		<result column="subjects_answer_code" property="subjectsAnswerCode" />
+		<result column="subjects_answer_sure" property="subjectsAnswerSure" />
+		<result column="subjects_answer_name" property="subjectsAnswerName" />
+		<result column="subjects_answer_name_img_url" property="subjectsAnswerNameImgUrl" />
+		<result column="subjects_answer_create_time" property="subjectsAnswerCreateTime" />
+		<result column="subjects_answer_update_time" property="subjectsAnswerUpdateTime" />
+		<result column="subjects_answer_create_by" property="subjectsAnswerCreateBy" />
+		<result column="subjects_answer_update_by" property="subjectsAnswerUpdateBy" />
+	</resultMap>
+
+</mapper>

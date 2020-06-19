@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.github.edu.modular.edu.dao.ExamMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="baseResultMap" type="com.github.edu.modular.edu.model.Exam">
+		<id column="exam_id" property="examId"/>
+		<result column="paper_id" property="paperId"/>
+		<result column="exam_name" property="examName"/>
+		<result column="exam_status" property="examStatus"/>
+		<result column="exam_version" property="examVersion"/>
+		<result column="exam_start_time" property="examStartTime" />
+		<result column="exam_end_time" property="examEndTime" />
+		<result column="exam_time" property="examTime"/>
+		<result column="exam_times" property="examTimes" />
+		<result column="exam_desc" property="examDesc"/>
+		<result column="exam_index_img_url" property="examIndexImgUrl" />
+		<result column="exam_credit" property="examCredit" />
+		<result column="exam_is_order" property="examIsOrder" />
+		<result column="exam_is_order_choice" property="examIsOrderChoice"/>
+		<result column="exam_reconnect" property="examReconnect" />
+		<result column="exam_submit" property="examSubmit" />
+		<result column="exam_grade" property="examGrade" />
+		<result column="exam_users" property="examUsers" />
+		<result column="exam_checkers" property="examCheckers" />
+		<result column="exam_show_user" property="examShowUser" />
+		<result column="exam_auto_pack" property="examAutoPack"/>
+		<result column="exam_create_time" property="examCreateTime"/>
+		<result column="exam_update_time" property="examUpdateTime" />
+		<result column="exam_create_by" property="examCreateBy" />
+		<result column="exam_update_by" property="examUpdateBy" />
+		<result column="exam_is_delete" property="examIsDelete" />
+	</resultMap>
+
+</mapper>

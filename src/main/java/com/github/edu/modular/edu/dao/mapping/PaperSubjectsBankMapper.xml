@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.github.edu.modular.edu.dao.PaperSubjectsBankMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.github.edu.modular.edu.model.PaperSubjectsBank">
+        <id column="paper_subjects_bank_id" property="paperSubjectsBankId" />
+        <result column="subjects_bank_id" property="subjectsBankId" />
+        <result column="paper_id" property="paperId" />
+        <result column="subjects_bank_name" property="subjectsBankName" />
+        <result column="paper_subjects_bank_single" property="paperSubjectsBankSingle" />
+        <result column="paper_subjects_bank_more" property="paperSubjectsBankMore" />
+        <result column="paper_subjects_bank_judge" property="paperSubjectsBankJudge" />
+        <result column="paper_subjects_bank_pack" property="paperSubjectsBankPack" />
+        <result column="paper_subjects_bank_faq" property="paperSubjectsBankFaq" />
+        <result column="paper_subjects_bank_create_time" property="paperSubjectsBankCreateTime" />
+        <result column="paper_subjects_bank_update_time" property="paperSubjectsBankUpdateTime" />
+        <result column="paper_subjects_bank_create_by" property="paperSubjectsBankCreateBy" />
+        <result column="paper_subjects_bank_update_by" property="paperSubjectsBankUpdateBy" />
+        <result column="paper_subjects_bank_is_delete" property="paperSubjectsBankIsDelete" />
+    </resultMap>
+
+</mapper>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.github.edu.modular.edu.dao.ConfirmExamMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="baseResultMap" type="com.github.edu.modular.edu.model.ConfirmExam">
+		<id column="confirm_exam_id" property="confirmExamId" />
+		<result column="paper_id" property="paperId" />
+		<result column="exam_id" property="examId" />
+		<result column="practice_id" property="practiceId" />
+		<result column="user_id" property="userId" />
+		<result column="confirm_exam_status" property="confirmExamStatus" />
+		<result column="confirm_exam_create_time" property="confirmExamCreateTime" />
+		<result column="confirm_exam_update_time" property="confirmExamUpdateTime" />
+		<result column="confirm_exam_create_by" property="confirmExamCreateBy" />
+		<result column="confirm_exam_update_by" property="confirmExamUpdateBy" />
+		<result column="confirm_exam_is_delete" property="confirmExamIsDelete" />
+	</resultMap>
+
+</mapper>

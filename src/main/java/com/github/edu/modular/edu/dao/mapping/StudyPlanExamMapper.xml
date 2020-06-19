@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.github.edu.modular.edu.dao.StudyPlanExamMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.github.edu.modular.edu.model.StudyPlanExam">
+        <id column="id" property="id" />
+        <result column="study_plan_exam_id" property="studyPlanExamId" />
+        <result column="study_plan_id" property="studyPlanId" />
+        <result column="study_plan_exam_create_time" property="studyPlanExamCreateTime" />
+        <result column="study_plan_exam_update_time" property="studyPlanExamUpdateTime" />
+        <result column="study_plan_exam_create_by" property="studyPlanExamCreateBy" />
+        <result column="study_plan_exam_update_by" property="studyPlanExamUpdateBy" />
+        <result column="study_plan_exam_is_delete" property="studyPlanExamIsDelete" />
+    </resultMap>
+
+</mapper>

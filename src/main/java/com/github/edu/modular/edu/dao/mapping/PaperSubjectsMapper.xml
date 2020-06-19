@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.github.edu.modular.edu.dao.PaperSubjectsMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="baseResultMap" type="com.github.edu.modular.edu.model.PaperSubjects">
+		<id column="paper_subjects_id" property="paperSubjectsId" />
+		<result column="paper_id" property="paperId" />
+		<result column="subjects_id" property="subjectsId" />
+		<result column="subjects_name" property="subjectsName" />
+		<result column="subjects_type" property="subjectsType" />
+		<result column="paper_subjects_grade" property="paperSubjectsGrade" />
+		<result column="paper_subjects_order" property="paperSubjectsOrder" />
+		<result column="paper_subjects_version" property="paperSubjectsVersion" />
+		<result column="paper_subjects_create_time" property="paperSubjectsCreateTime" />
+		<result column="paper_subjects_update_time" property="paperSubjectsUpdateTime" />
+		<result column="paper_subjects_create_by" property="paperSubjectsCreateBy" />
+		<result column="paper_subjects_update_by" property="paperSubjectsUpdateBy" />
+		<result column="paper_subjects_is_delete" property="paperSubjectsIsDelete" />
+	</resultMap>
+
+</mapper>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.github.edu.modular.edu.dao.UserAnswerMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="baseResultMap" type="com.github.edu.modular.edu.model.UserAnswer">
+		<id column="user_answer_id" property="userAnswerId" />
+		<result column="practice_id" property="practiceId" />
+		<result column="exam_id" property="examId" />
+		<result column="subjects_id" property="subjectsId" />
+		<result column="user_id" property="userId" />
+		<result column="user_answer_version" property="userAnswerVersion" />
+		<result column="user_answer_times" property="userAnswerTimes" />
+		<result column="user_answer_code" property="userAnswerCode" />
+		<result column="user_answer_grade" property="userAnswerGrade" />
+		<result column="user_answer_is_sure" property="userAnswerIsSure" />
+		<result column="user_answer_create_time" property="userAnswerCreateTime" />
+		<result column="user_answer_update_time" property="userAnswerUpdateTime" />
+		<result column="user_answer_create_by" property="userAnswerCreateBy" />
+		<result column="user_answer_update_by" property="userAnswerUpdateBy" />
+	</resultMap>
+
+	<!-- 查询批量用户 -->
+	<select id="selectUsers" resultType="map" parameterType="map">
+		select * from pig.sys_user where user_id
+		in
+		<foreach collection="list" open="(" close=")" index="index" item="item" separator=",">
+			#{item}
+		</foreach>
+	</select>
+
+</mapper>

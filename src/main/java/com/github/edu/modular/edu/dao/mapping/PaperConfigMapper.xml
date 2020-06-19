@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.github.edu.modular.edu.dao.PaperConfigMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="baseResultMap" type="com.github.edu.modular.edu.model.PaperConfig">
+		<id column="paper_config_id" property="paperConfigId" />
+		<result column="paper_id" property="paperId" />
+		<result column="paper_config_obj" property="paperConfigObj" />
+		<result column="paper_config_single" property="paperConfigSingle" />
+		<result column="paper_config_more" property="paperConfigMore" />
+		<result column="paper_config_judge" property="paperConfigJudge" />
+		<result column="paper_config_pack" property="paperConfigPack" />
+		<result column="paper_config_faq" property="paperConfigFaq" />
+		<result column="paper_config_create_time" property="paperConfigCreateTime" />
+		<result column="paper_config_update_time" property="paperConfigUpdateTime" />
+		<result column="paper_config_create_by" property="paperConfigCreateBy" />
+		<result column="paper_config_update_by" property="paperConfigUpdateBy" />
+	</resultMap>
+
+</mapper>

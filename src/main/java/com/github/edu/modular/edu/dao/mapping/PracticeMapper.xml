@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.github.edu.modular.edu.dao.PracticeMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="baseResultMap" type="com.github.edu.modular.edu.model.Practice">
+		<id column="practice_id" property="practiceId" />
+		<result column="practice_name" property="practiceName" />
+		<result column="practice_status" property="practiceStatus" />
+		<result column="practice_subjects_bank_ids" property="practiceSubjectsBankIds" />
+		<result column="practice_subjects_times" property="practiceSubjectsTimes" />
+		<result column="practice_create_time" property="practiceCreateTime" />
+		<result column="practice_update_time" property="practiceUpdateTime" />
+		<result column="practice_create_by" property="practiceCreateBy" />
+		<result column="practice_update_by" property="practiceUpdateBy" />
+		<result column="practice_is_delete" property="practiceIsDelete" />
+	</resultMap>
+
+	<select id="queryPracticeByUser" resultType="com.github.edu.modular.edu.model.Practice">
+		SELECT
+			u.*,
+			( SELECT count( 1 ) FROM user_answer a WHERE a.practice_id = u.practice_id AND u.user_id = a.user_id ) AS answer_num,
+			(
+		SELECT
+			count( 1 )
+		FROM
+			user_answer a
+			LEFT JOIN subjects_answer s ON s.subjects_id = a.subjects_id
+			AND s.subjects_answer_code = a.user_answer_code
+		WHERE
+			s.subjects_answer_sure = 1
+			AND a.practice_id = u.practice_id
+			AND u.user_id = a.user_id
+			) AS correct_num,
+			(
+		SELECT
+			a.user_answer_create_time
+		FROM
+			user_answer a
+		WHERE
+			a.practice_id = u.practice_id
+			AND a.user_id = u.user_id
+		ORDER BY
+			a.user_answer_create_time DESC
+			LIMIT 1
+			) AS last_update_time
+		FROM
+			user_practice u
+		left join pig.sys_user r
+		on r.user_id = u.user_id
+		WHERE
+			u.practice_id = #{practiceId}
+			<if test="userName != null and userName != ''">
+				and r.username like CONCAT('%',#{userName},'%')
+			</if>
+		<if test="deptId != null">
+			and r.deptId = #{deptId}
+		</if>
+	</select>
+
+	<select id="queryPracticeInfo" resultType="com.github.edu.modular.edu.model.PracticeStatistics">
+		SELECT
+			count( 1 ) total_num,
+			( SELECT count( DISTINCT u.user_id ) FROM user_answer u WHERE u.practice_id = #{practiceId} ) do_people_num,
+			(
+		SELECT
+			count( 1 )
+		FROM
+			user_answer a
+			LEFT JOIN subjects_answer s ON s.subjects_id = a.subjects_id
+			AND s.subjects_answer_code = a.user_answer_code
+		WHERE
+			s.subjects_answer_sure = 1
+			AND a.practice_id = #{practiceId}
+			AND a.subjects_id IN ( SELECT ss.subjects_id FROM subjects ss WHERE ss.subjects_type = #{subjectsType} )
+			) AS correct_num,
+			(
+		SELECT
+			count( 1 )
+		FROM
+			user_answer a
+			LEFT JOIN subjects_answer s ON s.subjects_id = a.subjects_id
+			AND s.subjects_answer_code = a.user_answer_code
+		WHERE
+			s.subjects_answer_sure = 1
+			AND a.practice_id = #{practiceId}
+			AND a.user_answer_times = 1
+			AND a.subjects_id IN ( SELECT ss.subjects_id FROM subjects ss WHERE ss.subjects_type = #{subjectsType} )
+			) AS once_correct_num
+		FROM
+			subjects s
+		WHERE
+			subjects_type = #{subjectsType}
+		<if test="ids != null">
+			AND subjects_bank_id in
+			<foreach item="item" index="index" collection="ids" open="(" separator="," close=")">
+				#{item}
+			</foreach>
+		</if>
+	</select>
+
+
+</mapper>

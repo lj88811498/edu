@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.github.edu.modular.edu.dao.CourseMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.github.edu.modular.edu.model.Course">
+        <id column="id" property="id" />
+        <result column="course_name" property="courseName" />
+        <result column="course_desc" property="courseDesc" />
+        <result column="course_type_id" property="courseTypeId" />
+        <result column="course_cover" property="courseCover" />
+        <result column="course_time" property="courseTime" />
+        <result column="course_credit" property="courseCredit" />
+        <result column="course_type" property="courseType" />
+        <result column="course_courseware" property="courseCourseware" />
+        <result column="course_create_time" property="courseCreateTime" />
+        <result column="course_update_time" property="courseUpdateTime" />
+        <result column="course_create_by" property="courseCreateBy" />
+        <result column="course_update_by" property="courseUpdateBy" />
+        <result column="course_is_delete" property="courseIsDelete" />
+    </resultMap>
+
+</mapper>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.github.edu.modular.edu.dao.SubjectsBankMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="baseResultMap" type="com.github.edu.modular.edu.model.SubjectsBank">
+		<id column="subjects_bank_id" property="subjectsBankId" />
+		<result column="subjects_bank_type_id" property="subjectsBankTypeId" />
+		<result column="subjects_bank_name" property="subjectsBankName" />
+		<result column="subjects_bank_create_time" property="subjectsBankCreateTime" />
+		<result column="subjects_bank_update_time" property="subjectsBankUpdateTime" />
+		<result column="subjects_bank_create_by" property="subjectsBankCreateBy" />
+		<result column="subjects_bank_update_by" property="subjectsBankUpdateBy" />
+		<result column="subjects_bank_is_delete" property="subjectsBankIsDelete" />
+	</resultMap>
+
+</mapper>
